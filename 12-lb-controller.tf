@@ -1,5 +1,5 @@
 resource "helm_release" "aws-load-balancer-controller" {
-  name = "cluster_name"
+  name = "cluster_name-aws-load-balancer-controller"
 
   repository = "https://aws.github.io/eks-charts"
   chart      = "aws-load-balancer-controller"
@@ -7,7 +7,7 @@ resource "helm_release" "aws-load-balancer-controller" {
   version    = "1.4.1"
 
   set {
-    name  = "cluster_name"
+    name  = "clusterName"
     value = aws_eks_cluster.cluster.id
   }
 
