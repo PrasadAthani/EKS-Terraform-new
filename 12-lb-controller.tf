@@ -1,5 +1,5 @@
 resource "helm_release" "aws-load-balancer-controller" {
-  name = "cluster_name-aws-load-balancer-controller"
+  name = "var.cluster_name-aws-load-balancer-controller"
 
   repository = "https://aws.github.io/eks-charts"
   chart      = "aws-load-balancer-controller"
