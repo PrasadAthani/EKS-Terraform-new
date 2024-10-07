@@ -18,12 +18,12 @@ data "aws_iam_policy_document" "aws_load_balancer_controller_assume_role_policy"
 
 resource "aws_iam_role" "aws_load_balancer_controller" {
   assume_role_policy = data.aws_iam_policy_document.aws_load_balancer_controller_assume_role_policy.json
-  name               = "cluster_name"
+  name               = "cluster_name-aws-load-balancer-controller"
 }
 
 resource "aws_iam_policy" "aws_load_balancer_controller" {
   policy = file("./AWSLoadBalancerController.json")
-  name   = "cluster_name"
+  name   = "cluster_name-AWSLoadBalancerController"
 }
 
 resource "aws_iam_role_policy_attachment" "aws_load_balancer_controller_attach" {
