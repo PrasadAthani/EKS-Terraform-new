@@ -6,7 +6,7 @@ resource "aws_efs_file_system" "eks" {
   encrypted        = true
 
   tags = {
-    Name = "eks"
+    Name = "cluster_name"
   }
 }
 
